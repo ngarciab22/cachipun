@@ -11,4 +11,39 @@ let empate = 0; //Se crea variable empate con asignación 0
 let victoriaCompu = 0; //Se crea variable victoriaCompu con asignación 0
 let victoriaUser = 0; //Se crea variable victoriaUser con asignacion 0
 let eleccionUser; //Se crea variable eleccionUser
-    
+
+//Se inicia el bucle for
+for(let i = 0; i < cantidad; i++){  //Se asigna un valor al iterador, se define que sea menor que cantidad y que en cada iteración del bucle aumente en 1
+    while (true) { //Se añade bucle while
+        eleccionUser = prompt("Elige piedra, papel o tijera:").toLowerCase(); //Se asigna el valor a eleccionUser
+        if (eleccionUser === "piedra" || eleccionUser === "papel" || eleccionUser === "tijera")break; //Se añade if para verificar que eleccionUser sea === a los string
+        else {
+            alert("Por favor, ingresa una opción válida (piedra, papel o tijera).");//En caso de que se cumpla el if se pide reingresar la opción
+        }
+    }
+    let eleccionCompu = Math.floor(Math.random()*3)//Se añade función para obtener números aleatorios entre 0, 1 y 2
+    //Se añade if para verificar eleccionCompu === 0
+    if(eleccionCompu === 0) {
+        alert("La máquina ha elegido piedra.");
+    } 
+    //Se añade else if para verificar eleccionCompu === 1
+    else if(eleccionCompu === 1){
+        alert("La máquina ha elegido papel.");
+    } 
+    //Se añade else if para verificar eleccionCompu === 2
+    else if(eleccionCompu === 2){
+        alert("La máquina ha elegido tijera.");
+    }
+    //Se añade if para determinar empate por jugada
+    if ((eleccionCompu === 0 && eleccionUser === "piedra") || (eleccionCompu === 1 && eleccionUser === "papel") || (eleccionCompu === 2 && eleccionUser === "tijera")){
+        alert("Ha habido un empate."); empate++ //Contador de jugadas empatadas
+    }
+    //Se añade else if para determinar victoria de la máquina por jugada
+    else if  ((eleccionCompu === 2 && eleccionUser === "papel") || (eleccionCompu === 0 && eleccionUser === "tijera") || (eleccionCompu === 1 && eleccionUser === "papel")){
+        alert("La máquina ha ganado."); victoriaCompu++ //Contador de jugadas con victoria de la máquina
+    }
+    //Se añade else if para determinar victoria del usuario por jugada
+    else if ((eleccionCompu === 1 && eleccionUser === "tijera") || (eleccionCompu === 2 && eleccionUser === "piedra") || (eleccionCompu === 0 && eleccionUser === "papel")){
+        alert("Has ganado."); victoriaUser++ //Contador de jugadas con victoria del usuario
+    }
+}
