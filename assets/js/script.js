@@ -49,7 +49,7 @@ for(let i = 0; i < cantidad; i++){  //Se asigna un valor al iterador, se define 
 }
 
 //Se añade if para determinar si hubo empate como resultado final
-if (empate == victoriaCompu === victoriaUser){
+if (empate == (victoriaCompu === victoriaUser)){
     alert("Ha habido un empate ¡Gracias por jugar!")
 }
 //Se añade else if para determinar si hubo victoria de parte del usuario como resultado final
