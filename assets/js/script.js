@@ -39,13 +39,26 @@ for(let i = 0; i < cantidad; i++){  //Se asigna un valor al iterador, se define 
         alert("Ha habido un empate."); empate++ //Contador de jugadas empatadas
     }
     //Se añade else if para determinar victoria de la máquina por jugada
-    else if  ((eleccionCompu === 2 && eleccionUser === "papel") || (eleccionCompu === 0 && eleccionUser === "tijera") || (eleccionCompu === 1 && eleccionUser === "papel")){
-        alert("La máquina ha ganado."); victoriaCompu++ //Contador de jugadas con victoria de la máquina
-    }
-    //Se añade else if para determinar victoria del usuario por jugada
-    else if ((eleccionCompu === 1 && eleccionUser === "tijera") || (eleccionCompu === 2 && eleccionUser === "piedra") || (eleccionCompu === 0 && eleccionUser === "papel")){
+    else if  ((eleccionCompu === 0 && eleccionUser === "papel") || (eleccionCompu === 1 && eleccionUser === "tijera") || (eleccionCompu === 2 && eleccionUser === "piedra")){
         alert("Has ganado."); victoriaUser++ //Contador de jugadas con victoria del usuario
     }
+    //Se añade else if para determinar victoria del usuario por jugada
+    else if ((eleccionCompu === 0 && eleccionUser === "tijera") || (eleccionCompu === 1 && eleccionUser === "piedra") || (eleccionCompu === 2 && eleccionUser === "papel")){
+        alert("La máquina ha ganado."); victoriaCompu++ //Contador de jugadas con victoria de la máquina
+    }
+}
+
+//Se añade if para determinar si hubo empate como resultado final
+if (empate == victoriaCompu === victoriaUser){
+    alert("Ha habido un empate ¡Gracias por jugar!")
+}
+//Se añade else if para determinar si hubo victoria de parte del usuario como resultado final
+else if (victoriaCompu < victoriaUser){
+    alert("¡Te felicitó! ¡Eres el ganador del juego!")
+}
+//Se añade else if para determinar si hubo victoria de parte de la máquina como resultado final
+else if (victoriaUser < victoriaCompu){
+    alert("Has perdido ¡Gracias por jugar!")
 }
 
 document.write(`En total hubo una cantidad de ${empate} empate(s), ${victoriaCompu} victoria(s) de la máquina y ${victoriaUser} victoria(s) del jugador.`)
