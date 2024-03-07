@@ -7,3 +7,8 @@ while (true){
         alert("Ingresa un número válido.") //Se añade else en caso de que if no se cumpla
     }}
 
+let empate = 0; //Se crea variable empate con asignación 0
+let victoriaCompu = 0; //Se crea variable victoriaCompu con asignación 0
+let victoriaUser = 0; //Se crea variable victoriaUser con asignacion 0
+let eleccionUser; //Se crea variable eleccionUser
+    
