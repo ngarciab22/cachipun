@@ -47,3 +47,5 @@ for(let i = 0; i < cantidad; i++){  //Se asigna un valor al iterador, se define 
         alert("Has ganado."); victoriaUser++ //Contador de jugadas con victoria del usuario
     }
 }
+
+document.write(`En total hubo una cantidad de ${empate} empate(s), ${victoriaCompu} victoria(s) de la máquina y ${victoriaUser} victoria(s) del jugador.`)
